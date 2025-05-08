@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>RPG em HTML</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <h1>🌟 Jogo de RPG</h1>
+  <div id="map" class="map"></div>
+
+  <div class="status-bar">
+    <span>❤️ Vida: <span id="playerHp"></span></span>
+    <span>🧟 Inimigo: <span id="enemyHp"></span></span>
+    <span>⭐ Nível: <span id="level"></span></span>
+    <span>⚔️ XP: <span id="xp"></span></span>
+    <span>💊 Poções: <span id="potions"></span></span>
+  </div>
+
+  <div class="buttons">
+    <button onclick="move(-1,0)">⬅️</button>
+    <button onclick="move(1,0)">➡️</button>
+    <button onclick="move(0,-1)">⬆️</button>
+    <button onclick="move(0,1)">⬇️</button>
+    <button onclick="attack()">⚔️ Atacar</button>
+    <button onclick="usePotion()">💊 Usar Poção</button>
+    <button onclick="saveGame()">💾 Salvar</button>
+    <button onclick="loadGame()">📂 Carregar</button>
+    <button onclick="openShop()">🛒 Loja</button>
+    <button onclick="buyPotion()">💊 Comprar Poção</button>
+    <button onclick="showInventory()">🎒 Inventário</button>
+    <button onclick="talkToNpc()">💬 Falar com NPC</button>
+    <button onclick="viewQuests()">📜 Missões</button>
+  </div>
+
+  <div class="audio-controls">
+    <button onclick="pauseMusic()">🔇 Pausar Música</button>
+    <button onclick="playMusic()">🔊 Tocar Música</button>
+  </div>
+
+  <div id="log" class="log"></div>
+
+  <!-- Áudio -->
+  <audio id="bgMusic" loop>
+    <source src="audio/bg-music.mp3" type="audio/mpeg">
+  </audio>
+  <audio id="attackSound" src="audio/attack.mp3"></audio>
+  <audio id="potionSound" src="audio/potion.mp3"></audio>
+
+  <script src="script.js"></script>
+</body>
+</html>
